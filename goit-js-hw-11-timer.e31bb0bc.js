@@ -217,6 +217,14 @@ var CountdownTimer = /*#__PURE__*/function () {
 
       var targetTime = this.targetDate.getTime();
       setInterval(function () {
+        if (targetTime <= Date.now()) {
+          _this.daysTextEl.textContent = 0;
+          _this.hoursTextEl.textContent = '00';
+          _this.minsTextEl.textContent = '00';
+          _this.secsTextEl.textContent = '00';
+          return;
+        }
+
         var currentTime = Date.now();
         var deltaTime = targetTime - currentTime;
 
@@ -258,7 +266,7 @@ var CountdownTimer = /*#__PURE__*/function () {
 
 var countdownTimer = new CountdownTimer({
   selector: '#timer-1',
-  targetDate: new Date('November 1, 2020')
+  targetDate: new Date('July 1, 2021')
 });
 countdownTimer.timer();
 },{"./main.css":"main.css"}],"C:/Users/asus/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -289,7 +297,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58370" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61457" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
